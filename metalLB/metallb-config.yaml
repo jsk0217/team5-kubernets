@@ -1,0 +1,15 @@
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system  # MetalLB 네임스페이스
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 192.168.0.200 - 192.168.0.210
+      autoAssign: true
